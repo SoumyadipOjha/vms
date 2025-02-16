@@ -207,7 +207,7 @@ app.put("/api/visitors/:id/status", authMiddleware, async (req, res) => {
         html: `
           <div style="max-width: 400px; margin: auto; padding: 20px; border: 2px solid red; border-radius: 10px; text-align: center; font-family: Arial, sans-serif;">
             <h2 style="color: red;">Visitor Request Rejected</h2>
-<img src="http://localhost:5000${visitor.photo}" alt="Rejected" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;">
+<img src="https://mockvms.onrender.com${visitor.photo}" alt="Rejected" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;">
             <p><strong>Name:</strong> ${visitor.fullName}</p>
             <p><strong>Email:</strong> ${visitor.email}</p>
             <p><strong>Purpose:</strong> ${visitor.purpose}</p>

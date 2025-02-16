@@ -27,7 +27,9 @@ const VisitorForm = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/employees");
+        const response = await axios.get(
+          "https://mockvms.onrender.com/api/employees"
+        );
         setEmployees(response.data);
       } catch (error) {
         console.error("Error fetching employees:", error);
@@ -83,13 +85,16 @@ const VisitorForm = () => {
         formData.append("photo", photoFile);
       }
 
-      await axios.post("http://localhost:5000/api/visitors", formData, {
+      await axios.post("https://mockvms.onrender.com/api/visitors", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
       setIsSubmitted(true);
     } catch (error) {
-      console.error("Error submitting form:", error.response ? error.response.data : error);
+      console.error(
+        "Error submitting form:",
+        error.response ? error.response.data : error
+      );
       alert("Form submission failed. Please try again.");
     } finally {
       setLoading(false);
@@ -107,24 +112,43 @@ const VisitorForm = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
           <label style={styles.label}>Full Name:</label>
-          <input {...register("fullName", { required: "Full Name is required" })} style={styles.input} />
-          {errors.fullName && <p style={styles.errorText}>{errors.fullName.message}</p>}
+          <input
+            {...register("fullName", { required: "Full Name is required" })}
+            style={styles.input}
+          />
+          {errors.fullName && (
+            <p style={styles.errorText}>{errors.fullName.message}</p>
+          )}
 
           <label style={styles.label}>Contact:</label>
-          <input type="text" {...register("contact", { required: "Contact is required" })} style={styles.input} />
-          {errors.contact && <p style={styles.errorText}>{errors.contact.message}</p>}
+          <input
+            type="text"
+            {...register("contact", { required: "Contact is required" })}
+            style={styles.input}
+          />
+          {errors.contact && (
+            <p style={styles.errorText}>{errors.contact.message}</p>
+          )}
 
           <label style={styles.label}>Purpose:</label>
-          <select {...register("purpose", { required: "Purpose is required" })} style={styles.select}>
+          <select
+            {...register("purpose", { required: "Purpose is required" })}
+            style={styles.select}
+          >
             <option value="">Select</option>
             <option value="Meeting">Meeting</option>
             <option value="Interview">Interview</option>
             <option value="Delivery">Delivery</option>
           </select>
-          {errors.purpose && <p style={styles.errorText}>{errors.purpose.message}</p>}
+          {errors.purpose && (
+            <p style={styles.errorText}>{errors.purpose.message}</p>
+          )}
 
           <label style={styles.label}>Time Slot:</label>
-          <select {...register("timeSlot", { required: "Please select a time slot" })} style={styles.select}>
+          <select
+            {...register("timeSlot", { required: "Please select a time slot" })}
+            style={styles.select}
+          >
             <option value="">Select Time Slot</option>
             {timeSlots.map((slot, index) => (
               <option key={index} value={slot}>
@@ -132,7 +156,9 @@ const VisitorForm = () => {
               </option>
             ))}
           </select>
-          {errors.timeSlot && <p style={styles.errorText}>{errors.timeSlot.message}</p>}
+          {errors.timeSlot && (
+            <p style={styles.errorText}>{errors.timeSlot.message}</p>
+          )}
 
           <label style={styles.label}>Host Employee:</label>
           {employees.length > 0 ? (
@@ -154,12 +180,26 @@ const VisitorForm = () => {
           )}
 
           <label style={styles.label}>Capture Photo:</label>
-          <Webcam ref={webcamRef} screenshotFormat="image/jpeg" style={styles.webcam} />
-          <button type="button" onClick={capturePhoto} style={styles.captureButton}>
+          <Webcam
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            style={styles.webcam}
+          />
+          <button
+            type="button"
+            onClick={capturePhoto}
+            style={styles.captureButton}
+          >
             Capture
           </button>
 
-          {capturedImage && <img src={capturedImage} alt="Captured" style={styles.imagePreview} />}
+          {capturedImage && (
+            <img
+              src={capturedImage}
+              alt="Captured"
+              style={styles.imagePreview}
+            />
+          )}
 
           <button type="submit" disabled={loading} style={styles.submitButton}>
             {loading ? "Submitting..." : "Submit"}

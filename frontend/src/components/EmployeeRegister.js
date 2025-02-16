@@ -19,7 +19,7 @@ const EmployeeRegister = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/employees/register",
+        "https://mockvms.onrender.com/api/employees/register",
         data
       );
       setMessage(response.data.message);

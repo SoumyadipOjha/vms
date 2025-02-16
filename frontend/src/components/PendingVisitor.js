@@ -19,7 +19,7 @@ const AllVisitors = () => {
 
     const fetchAllVisitors = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/visitors", {
+            const response = await axios.get("https://mockvms.onrender.com/api/visitors", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setVisitors(response.data);
@@ -33,7 +33,7 @@ const AllVisitors = () => {
     const updateVisitorStatus = async (id, newStatus) => {
         try {
             const response = await axios.put(
-                `http://localhost:5000/api/visitors/${id}/status`,
+                `https://mockvms.onrender.com/api/visitors/${id}/status`,
                 { status: newStatus },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -95,7 +95,7 @@ const AllVisitors = () => {
                                     <img
                                         src={
                                             visitor.photo
-                                                ? `http://localhost:5000${visitor.photo}`
+                                                ? `https://mockvms.onrender.com${visitor.photo}`
                                                 : "/default-avatar.png"
                                         }
                                         alt={visitor.fullName || "Visitor"}

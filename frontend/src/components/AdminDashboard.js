@@ -8,13 +8,13 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     // Fetch Employees
-    fetch("http://localhost:5000/api/employee") // Change URL if needed
+    fetch("https://mockvms.onrender.com/api/employee") // Change URL if needed
       .then((res) => res.json())
       .then((data) => setEmployees(data))
       .catch((err) => console.error("Error fetching employees:", err));
 
     // Fetch Visitors
-    fetch("http://localhost:5000/api/visitors", {
+    fetch("https://mockvms.onrender.com/api/visitors", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then(async (res) => {
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
 
   // Function to send meeting email
   const sendMeetingEmail = (email) => {
-    fetch("http://localhost:5000/api/send-email", {
+    fetch("https://mockvms.onrender.com/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

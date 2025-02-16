@@ -14,7 +14,7 @@ const EmployeeLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/employee/login", { username, password });
+      const response = await axios.post("https://mockvms.onrender.com/api/employee/login", { username, password });
       localStorage.setItem("token", response.data.token);
       navigate("/pending-visitors"); // Redirect after login
     } catch (error) {
