@@ -1,0 +1,109 @@
+/* General Page Styling */
+.login-container {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to right, #3498db, #1e3c72);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Left Section - Company Info */
+.login-info {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-info h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.login-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.login-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.login-info ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Right Section - Login Form */
+.login-box {
+    flex: 1;
+    background: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* Active Login Button */
+.active-button {
+    background: #1e3c72;
+}
+
+.active-button:hover {
+    background: #123456;
+}
+
+/* Disabled Button */
+.disabled-button {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-info {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .login-box {
+        border-radius: 0;
+        padding: 30px;
+    }
+}

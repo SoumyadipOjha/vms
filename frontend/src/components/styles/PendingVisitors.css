@@ -1,0 +1,121 @@
+/* Container */
+.all-visitors-container {
+    max-width: 90%;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.all-visitors-heading {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Message Styling */
+.all-visitors-message {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+.all-visitors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.all-visitors-table thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.all-visitors-table th {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Table Rows */
+.all-visitors-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Alternating Row Colors */
+.all-visitors-table tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+/* Hover Effect on Rows */
+.all-visitors-table tbody tr:hover {
+    background-color: #d6eaf8;
+    transition: background 0.3s ease;
+}
+
+/* Visitor Photo Styling */
+.visitor-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3498db;
+}
+
+/* Status Dropdown */
+.status-dropdown {
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #2980b9;
+    background: #ffffff;
+    color: #2980b9;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.status-dropdown:hover {
+    border-color: #1abc9c;
+    background: #1abc9c;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .all-visitors-container {
+        padding: 10px;
+    }
+
+    .all-visitors-table th,
+    .all-visitors-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .visitor-photo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .status-dropdown {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
