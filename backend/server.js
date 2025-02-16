@@ -172,7 +172,7 @@ app.put("/api/visitors/:id/status", authMiddleware, async (req, res) => {
     );
 
     // Ensure email field is correct
-    const visitorEmail = visitor.contact || visitor.contact; // Fallback to `contact` if `email` is missing
+    const visitorEmail = visitor.email || visitor.contact; // Fallback to `contact` if `email` is missing
     const visitorPhoto = visitor.photoUrl || "https://via.placeholder.com/150"; // Fallback to a placeholder if no photo is uploaded
 
     let mailOptions;
@@ -182,13 +182,13 @@ app.put("/api/visitors/:id/status", authMiddleware, async (req, res) => {
       mailOptions = {
         from: "soumyadipojha635@gmail.com",
         to: visitorEmail,
-        subject: `<h1>Your E-Pass for Check-In<h1>`,
+        subject: `Your E-Pass for Check-In`,
         html: `
           <div style="max-width: 400px; margin: auto; padding: 20px; border: 2px solid #1e3c72; border-radius: 10px; text-align: center; font-family: Arial, sans-serif;">
-            <h2 style="color: green;">Visitor Request Rejected</h2>
-<img src="https://mockvms.onrender.com${visitor.photo}" alt="Rejected" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;">
+            <h2 style="color: #1e3c72;">Official Visitor E-Pass</h2>
+            <img src="${visitorPhoto}" alt="Visitor Photo" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #1e3c72; margin-bottom: 10px;">
             <p><strong>Name:</strong> ${visitor.fullName}</p>
-            <p><strong>Email:</strong> ${visitor.contact}</p>
+            <p><strong>Email:</strong> ${visitor.email}</p>
             <p><strong>Purpose:</strong> ${visitor.purpose}</p>
             <p><strong>Host:</strong> ${visitor.hostEmployee}</p>
             <p><strong>Time Slot:</strong> ${visitor.timeSlot}</p>
@@ -203,7 +203,7 @@ app.put("/api/visitors/:id/status", authMiddleware, async (req, res) => {
       mailOptions = {
         from: "soumyadipojha635@gmail.com",
         to: visitorEmail,
-        subject: `<h1>Visitor Request Rejected</h1>`,
+        subject: `Visitor Request Rejected`,
         html: `
           <div style="max-width: 400px; margin: auto; padding: 20px; border: 2px solid red; border-radius: 10px; text-align: center; font-family: Arial, sans-serif;">
             <h2 style="color: red;">Visitor Request Rejected</h2>
