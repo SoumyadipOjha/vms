@@ -26,13 +26,13 @@ const Footer = () => {
           <p>Email: support@visitorapp.com</p>
           <p>Phone: +123 456 7890</p>
           <div className="footer-social">
-            <a href="#" className="social-icon">
+            <a href="/" className="social-icon">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" className="social-icon">
+            <a href="/" className="social-icon">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="#" className="social-icon">
+            <a href="/" className="social-icon">
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
