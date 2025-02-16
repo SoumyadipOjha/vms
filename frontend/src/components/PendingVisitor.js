@@ -15,7 +15,7 @@ const AllVisitors = () => {
             return;
         }
         fetchAllVisitors();
-    }, [fetchAllVisitors, navigate, token]);
+    }, []);
 
     const fetchAllVisitors = async () => {
         try {
