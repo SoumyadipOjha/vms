@@ -23,7 +23,7 @@ const io = socketIo(server, {
 const PORT = process.env.PORT || 5000;
 const SECRET_KEY = process.env.SECRET_KEY || "your_secret_key";
 const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost:27017/visitor-management";
+  process.env.MONGO_URI ;
 
 // Middleware
 app.use(cors());
