@@ -120,7 +120,7 @@ const VisitorForm = () => {
             <p style={styles.errorText}>{errors.fullName.message}</p>
           )}
 
-          <label style={styles.label}>Contact:</label>
+          <label style={styles.label}>Email:</label>
           <input
             type="text"
             {...register("contact", { required: "Contact is required" })}

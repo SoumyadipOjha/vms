@@ -186,9 +186,9 @@ app.put("/api/visitors/:id/status", authMiddleware, async (req, res) => {
         html: `
           <div style="max-width: 400px; margin: auto; padding: 20px; border: 2px solid #1e3c72; border-radius: 10px; text-align: center; font-family: Arial, sans-serif;">
             <h2 style="color: #1e3c72;">Official Visitor E-Pass</h2>
-            <img src="${visitorPhoto}" alt="Visitor Photo" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #1e3c72; margin-bottom: 10px;">
+            <img src="https://mockvms.onrender.com${visitor.photo}" alt="Visitor Photo" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #1e3c72; margin-bottom: 10px;">
             <p><strong>Name:</strong> ${visitor.fullName}</p>
-            <p><strong>Email:</strong> ${visitor.email}</p>
+            <p><strong>Email:</strong> ${visitor.contact}</p>
             <p><strong>Purpose:</strong> ${visitor.purpose}</p>
             <p><strong>Host:</strong> ${visitor.hostEmployee}</p>
             <p><strong>Time Slot:</strong> ${visitor.timeSlot}</p>
